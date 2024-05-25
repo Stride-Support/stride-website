@@ -17,43 +17,62 @@
             overflow-y: auto; /* Allow vertical scrolling */
         }
         .container {
-            width: 50%; /* 1/2 page width */
+            width: 75%; /* 6/8ths of the width */
             margin: 20px auto;
             text-align: center; /* Center all content */
         }
-        .box {
-            background-color: #3b4b6e; /* Desaturated blue */
+        .title-box {
+            width: 50%; /* 1/2 page width */
+            background-color: #1f3a66; /* Title background color */
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .content-box {
+            width: 75%; /* 6/8ths of the width */
+            background-color: #2a4471; /* Content background color */
             border-radius: 15px;
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: left; /* Left align text inside boxes */
         }
-        .box h1, .box h2, .box h3, .box h4 {
+        h1, h2, h3, h4, h5, h6 {
             margin: 10px 0;
             font-family: 'Verdana', sans-serif;
             text-align: center; /* Center headers */
-            font-size: 2em; /* Larger font size */
         }
-        .box p, .box ul, .box li {
+        h1 {
+            font-size: 2.5em; /* Largest font size */
+            color: #9ee8ffb4; /* Contrast color for headings */
+        }
+        h2 {
+            font-size: 2em; /* Larger font size */
+            color: #9ee8ffb4; /* Contrast color for headings */
+        }
+        h3 {
+            font-size: 1.75em; /* Medium font size */
+        }
+        h4 {
+            font-size: 1.5em; /* Smaller font size */
+        }
+        h5 {
+            font-size: 1.25em; /* Smaller font size */
+        }
+        h6 {
+            font-size: 1em; /* Smallest font size */
+        }
+        p, ul, li {
             margin: 10px 0;
             font-family: 'Verdana', sans-serif;
         }
-        .box h1, .box h2 {
-            color: #9ee8ffb4; /* Contrast color for headings */
-        }
-        .box a {
+        a {
             color: hsla(204, 72%, 76%, 0.904); /* A contrasting color for links */
             text-decoration: none;
         }
-        .box a:hover {
+        a:hover {
             text-decoration: underline;
-        }
-        .header-box {
-            background-color: #1f3a66;
-        }
-        .content-box {
-            background-color: #2a4471;
         }
         .circles {
             position: absolute;
@@ -115,7 +134,7 @@
         </div>
         <div class="box content-box">
             <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
-            <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the <a href="https://www.termsfeed.com/privacy-policy-generator/" target="_blank">Privacy Policy Generator</a>.</p>
+            <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.</a>.</p>
         </div>
         <div class="box header-box">
             <h2>Interpretation and Definitions</h2>
