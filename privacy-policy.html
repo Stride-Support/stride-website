@@ -138,6 +138,7 @@
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
             animation: move 20s infinite ease-in-out;
+            transition: transform 0.5s ease-out;
         }
         @keyframes move {
             0% {
@@ -367,15 +368,29 @@ for (let i = 0; i < numCircles; i++) {
     circles.push(circle);
 }
 
-// Parallax effect on scroll
-window.addEventListener('scroll', () => {
+let lastScrollTop = 0;
+
+const parallaxEffect = () => {
     const scrollTop = window.scrollY;
+    const scrollDelta = scrollTop - lastScrollTop;
+    lastScrollTop = scrollTop;
+
     circles.forEach((circle, index) => {
-        const speed = 0.1 + (index % 5) * 0.02; // Varying speeds for parallax effect
-        const offset = scrollTop * speed;
+        const speed = 0.05 + (index % 5) * 0.02; // Varying speeds for parallax effect
+        const offset = scrollDelta * speed;
         circle.style.transform = `translateY(${offset}px)`;
     });
-});
+
+    requestAnimationFrame(resetCircles);
+};
+
+const resetCircles = () => {
+    circles.forEach((circle) => {
+        circle.style.transform = 'translateY(0)';
+    });
+};
+
+window.addEventListener('scroll', parallaxEffect);
 
 
                 </script>
