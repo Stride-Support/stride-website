@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stride - Privacy Policy</title>
+    <link rel="icon" href="logo.png" type="image/png">
     <style>
         body {
             background-color: #002b5c; /* Deep blue background */
@@ -28,6 +29,19 @@
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box; /* Include padding in width */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .title-box img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            object-fit: cover;
+            object-position: center;
+            filter: blur(2px); /* Blurred edges */
         }
         .content-box {
             width: 75%; /* 6/8ths of the width */
@@ -37,6 +51,7 @@
             margin-bottom: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: left; /* Left align text inside boxes */
+            box-sizing: border-box; /* Include padding in width */
         }
         h1, h2, h3, h4, h5, h6 {
             margin: 10px 0;
@@ -73,6 +88,9 @@
         }
         a:hover {
             text-decoration: underline;
+        }
+        b, strong {
+            color: #d0defcb4; /* Light color for bold text */
         }
         .circles {
             position: absolute;
@@ -119,7 +137,6 @@
             }
         }
     </style>
-    
 </head>
 <body>
     <div class="circles">
@@ -128,7 +145,8 @@
         <div class="circle"></div>
     </div>
     <div class="container">
-        <div class="box header-box">
+        <div class="title-box">
+            <img src="logo.png" alt="Logo">
             <h1>Privacy Policy</h1>
             <p><strong>Last updated: May 25, 2024</strong></p>
         </div>
