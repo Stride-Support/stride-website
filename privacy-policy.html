@@ -17,7 +17,7 @@
             overflow-y: auto; /* Allow vertical scrolling */
         }
         .container {
-            width: 75%; /* 6/8ths of the width */
+            width: 50%; /* 1/2 page width */
             margin: 20px auto;
             text-align: center; /* Center all content */
         }
@@ -29,16 +29,21 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: left; /* Left align text inside boxes */
         }
-        .box h1, .box h2, .box h3, .box h4, .box p, .box ul, .box li {
+        .box h1, .box h2, .box h3, .box h4 {
+            margin: 10px 0;
+            font-family: 'Verdana', sans-serif;
+            text-align: center; /* Center headers */
+            font-size: 2em; /* Larger font size */
+        }
+        .box p, .box ul, .box li {
             margin: 10px 0;
             font-family: 'Verdana', sans-serif;
         }
         .box h1, .box h2 {
             color: #9ee8ffb4; /* Contrast color for headings */
-            font-family: 'Georgia', serif;
         }
         .box a {
-            color: hsla(204, 72%, 76%, 0.904), 100%, 50%; /* A contrasting color for links */
+            color: hsla(204, 72%, 76%, 0.904); /* A contrasting color for links */
             text-decoration: none;
         }
         .box a:hover {
@@ -95,6 +100,7 @@
             }
         }
     </style>
+    
 </head>
 <body>
     <div class="circles">
