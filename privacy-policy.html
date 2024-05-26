@@ -408,71 +408,69 @@
             </ul>
         </div>
     </div>
-                <script>
-const circleContainer = document.getElementById('circle-container');
-const numCircles = 50; // Total number of circles to create
-const circles = [];
-const maxHeight = document.documentElement.scrollHeight; // Get the total scrollable height of the document
+    <script>
+        const circleContainer = document.getElementById('circle-container');
+        const numCircles = 50; // Total number of circles to create
+        const circles = [];
+        const maxHeight = document.documentElement.scrollHeight; // Get the total scrollable height of the document
 
-const createCircle = (diameter, top, left, duration) => {
-    const circle = document.createElement('div');
-    circle.classList.add('circle');
-    circle.style.width = `${diameter}px`;
-    circle.style.height = `${diameter}px`;
-    circle.style.top = `${top}px`; // Position relative to the document
-    circle.style.left = `${left}%`;
-    circle.style.animationDuration = `${duration}s`;
-    circleContainer.appendChild(circle);
-    return circle;
-};
+        const createCircle = (diameter, top, left, duration) => {
+            const circle = document.createElement('div');
+            circle.classList.add('circle');
+            circle.style.width = `${diameter}px`;
+            circle.style.height = `${diameter}px`;
+            circle.style.top = `${top}px`; // Position relative to the document
+            circle.style.left = `${left}%`;
+            circle.style.animationDuration = `${duration}s`;
+            circleContainer.appendChild(circle);
+            return circle;
+        };
 
-// Create circles throughout the page height
-for (let i = 0; i < numCircles; i++) {
-    const circle = createCircle(
-        Math.random() * 100 + 50, // Random diameter between 50px and 150px
-        Math.random() * maxHeight, // Random top position relative to the document height
-        Math.random() * 100, // Random left position between 0% and 100%
-        Math.random() * 20 + 10 // Random animation duration
-    );
-    circles.push(circle);
-}
+        // Create circles throughout the page height
+        for (let i = 0; i < numCircles; i++) {
+            const circle = createCircle(
+                Math.random() * 100 + 50, // Random diameter between 50px and 150px
+                Math.random() * maxHeight, // Random top position relative to the document height
+                Math.random() * 100, // Random left position between 0% and 100%
+                Math.random() * 20 + 10 // Random animation duration
+            );
+            circles.push(circle);
+        }
 
-let lastScrollTop = 0;
-const topBar = document.getElementById('top-bar');
+        let lastScrollTop = 0;
+        const topBar = document.getElementById('top-bar');
 
-const parallaxEffect = () => {
-    const scrollTop = window.scrollY;
-    const scrollDelta = scrollTop - lastScrollTop;
+        const parallaxEffect = () => {
+            const scrollTop = window.scrollY;
+            const scrollDelta = scrollTop - lastScrollTop;
 
-    // Update top bar visibility
-    if (scrollTop > lastScrollTop) {
-        // Scroll down
-        topBar.style.top = '-70px'; // Hide top bar
-    } else {
-        // Scroll up
-        topBar.style.top = '10px'; // Show top bar
-    }
-    lastScrollTop = scrollTop;
+            // Update top bar visibility
+            if (scrollTop > lastScrollTop) {
+                // Scroll down
+                topBar.style.top = '-70px'; // Hide top bar
+            } else {
+                // Scroll up
+                topBar.style.top = '10px'; // Show top bar
+            }
+            lastScrollTop = scrollTop;
 
-    // Apply parallax effect to circles
-    circles.forEach((circle, index) => {
-        const speed = 0.05 + (index % 5) * 0.02; // Varying speeds for parallax effect
-        const offset = scrollDelta * speed;
-        circle.style.transform = `translateY(${offset}px)`;
-    });
+            // Apply parallax effect to circles
+            circles.forEach((circle, index) => {
+                const speed = 0.05 + (index % 5) * 0.02; // Varying speeds for parallax effect
+                const offset = scrollDelta * speed;
+                circle.style.transform = `translateY(${offset}px)`;
+            });
 
-    requestAnimationFrame(resetCircles);
-};
+            requestAnimationFrame(resetCircles);
+        };
 
-const resetCircles = () => {
-    circles.forEach((circle) => {
-        circle.style.transform = 'translateY(0)';
-    });
-};
+        const resetCircles = () => {
+            circles.forEach((circle) => {
+                circle.style.transform = 'translateY(0)';
+            });
+        };
 
-window.addEventListener('scroll', parallaxEffect);
-
-
+        window.addEventListener('scroll', parallaxEffect);
                 </script>
             </body>
             </html>
