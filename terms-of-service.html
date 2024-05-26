@@ -1,16 +1,241 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stride - Terms and Conditions</title>
+    <title>Stride - Privacy Policy</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <style>
+        body {
+            background-color: #002b5c;
+            color: rgb(255, 255, 255);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            align-content: center;
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+        .container {
+            width: 60%; /* 6/8ths of the width */
+            margin: 20px auto;
+            text-align: center; /* Center all content */
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            display: flex;
+        }
+        .top-bar {
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1f3a66;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            border-radius: 15px; /* Rounded corners */
+            font-size: larger;
+            transition: top 0.3s; /* Smooth hide/show transition */
+        }
+        .top-bar .left, .top-bar .right {
+            display: flex;
+            align-items: center;
+        }
+        .top-bar .left button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 1em;
+            margin: 0 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .top-bar .left button::after {
+            content: "|";
+            color: white;
+            margin-left: 33px;
+        }
+        .top-bar .left button:last-child::after {
+            content: "";
+        }
+        .top-bar a {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 1em;
+            margin: 0 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .top-bar a:hover {
+            text-decoration: underline;
+        }
+        .top-bar .email-icon {
+            margin-right: 5px;
+            border-radius: 50%;
+        }
+        .title-box {
+            padding-top: 100px;
+            width: 100%; /* Full width */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .title-box img {
+            border-radius: 150%;
+            width: 150px;
+            height: 150px;
+            margin-right: 50px;
+            object-fit: cover;
+            object-position: center;
+            transform: scale(1.2); /* Zoom in on the image */
+            clip-path: circle(40% at 50% 50%); /* Clipping the image into a circle */
+        }
+        .content-box {
+            background-color: #2a4471; /* Content background color */
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left; /* Left align text inside boxes */
+            box-sizing: border-box; /* Include padding in width */
+        }
+        .trans-content-box {
+            background-color: #2a4471bd; /* Content background color */
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left; /* Left align text inside boxes */
+            box-sizing: border-box; /* Include padding in width */
+            width: 90%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            margin: 10px 0;
+            font-family: 'Verdana', sans-serif;
+            text-align: center; /* Center headers */
+        }
+        h1 {
+            font-size: 4em; /* Largest font size */
+            color: rgb(213, 240, 253); /* Contrast color for headings */
+        }
+        h2 {
+            font-size: 2.5em; /* Larger font size */
+            color: #dff7ff; /* Contrast color for headings */
+        }
+        h3 {
+            font-size: 2em; /* Medium font size */
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        h4 {
+            font-size: 1.5em; /* Smaller font size */
+            text-align: left;
+            color: white;
+            font-weight: 500;
+            margin-left: 4%;
+        }
+        h4::after {
+            content: ":";
+            margin-left: 2px; /* Optional: adds a small space between the text and the colon */
+        }
+        h5 {
+            font-size: 1.5em; /* Smaller font size */
+        }
+        h6 {
+            font-size: 1.25em; /* Smallest font size */
+        }
+        p, ul, li {
+            margin: 10px 0;
+            font-family: 'Verdana', sans-serif;
+        }
+        p{
+            color: rgba(245, 245, 245, 0.849);
+            margin-left: 8%;
+            margin-right: 8%;
+            opacity: 100%;
+        }
+        ul p {
+            padding-left: 0; /* Remove left padding */
+            margin-left: 0;  /* Also remove left margin if needed */
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        ul{
+            margin-left: 7%;
+        }
+        a {
+            color: rgb(122, 168, 255); /*contrasting color for links */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        b, strong {
+            color: rgb(155, 186, 253);/*color for bold text */
+        }
+        .circles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: move 20s infinite ease-in-out;
+            transition: transform 0.5s ease-out;
+        }
+        @keyframes move {
+            0% {
+                transform: translateY(0) rotate(0);
+            }
+            50% {
+                transform: translateY(-20px) rotate(45deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0);
+            }
+        }
+
+    </style>
 </head>
 <body>
-    <div class="embed-preview no-select">
-        <p>These terms and conditions (“Agreement”) set forth the general terms and conditions of your use of the “Stride” mobile application (“Mobile Application” or “Service”) and any of its related products and services (collectively, “Services”). This Agreement is legally binding between you (“User”, “you” or “your”) and this Mobile Application developer (“Operator”, “we”, “us” or “our”). If you are entering into this Agreement on behalf of a business or other legal entity, you represent that you have the authority to bind such entity to this Agreement, in which case the terms “User”, “you” or “your” shall refer to such entity. If you do not have such authority, or if you do not agree with the terms of this Agreement, you must not accept this Agreement and may not access and use the Mobile Application and Services. By accessing and using the Mobile Application and Services, you acknowledge that you have read, understood, and agree to be bound by the terms of this Agreement. You acknowledge that this Agreement is a contract between you and the Operator, even though it is electronic and is not physically signed by you, and it governs your use of the Mobile Application and Services.</p>
-        
-        <div class="wpembed-toc"><h3>Table of contents</h3>
+    <div class="top-bar" id="top-bar">
+        <div class="left">
+            <button onclick="window.location.href='index.html'">Index</button>
+            <button onclick="window.location.href='terms.html'">Terms</button>
+        </div>
+        <div class="right">
+            <img src="email-icon_edited.jpg" alt="Email" class="email-icon" width="40" height="40">
+            <a href="mailto:help.stride.app@gmail.com">Help.Stride.App@gmail.com</a>
+        </div>
+    </div>
+    <div class="circles" id="circle-container"></div>
+    <div class="container">
+        <div class="title-box">
+            <img src="logo.png" alt="Logo">
+            <h1>Terms and Conditions</h1>
+        </div>
+        <div class="box trans-content-box">
+            <p>These terms and conditions (“Agreement”) set forth the general terms and conditions of your use of the “Stride” mobile application (“Mobile Application” or “Service”) and any of its related products and services (collectively, “Services”). This Agreement is legally binding between you (“User”, “you” or “your”) and this Mobile Application developer (“Operator”, “we”, “us” or “our”). If you are entering into this Agreement on behalf of a business or other legal entity, you represent that you have the authority to bind such entity to this Agreement, in which case the terms “User”, “you” or “your” shall refer to such entity. If you do not have such authority, or if you do not agree with the terms of this Agreement, you must not accept this Agreement and may not access and use the Mobile Application and Services. By accessing and using the Mobile Application and Services, you acknowledge that you have read, understood, and agree to be bound by the terms of this Agreement. You acknowledge that this Agreement is a contract between you and the Operator, even though it is electronic and is not physically signed by you, and it governs your use of the Mobile Application and Services.</p>
+        </div>
+        <div class="box header-box">
+            <h2>Table of contents</h2>
+        </div>
+        <div class="box content-box">
             <ol class="wpembed-toc">
                 <li><a href="#accounts-and-membership">Accounts and membership</a></li>
                 <li><a href="#user-content">User content</a></li>
@@ -27,26 +252,154 @@
                 <li><a href="#contacting-us">Contacting us</a></li>
             </ol>
         </div>
+        <div class="box header-box">
+            <h2 id="accounts-and-membership">Accounts and membership</h2>
+        </div>
+        <div class="box content-box">
+            <p>If you create an account in the Mobile Application, you are responsible for maintaining the security of your account and you are fully responsible for all activities that occur under the account and any other actions taken in connection with it. We may monitor and review new accounts before you may sign in and start using the Services. Providing false contact information of any kind may result in the termination of your account. You must immediately notify us of any unauthorized uses of your account or any other breaches of security. We will not be liable for any acts or omissions by you, including any damages of any kind incurred as a result of such acts or omissions. We may suspend, disable, or delete your account (or any part thereof) if we determine that you have violated any provision of this Agreement or that your conduct or content would tend to damage our reputation and goodwill. If we delete your account for the foregoing reasons, you may not re-register for our Services. We may block your email address and Internet protocol address to prevent further registration.</p>
+        </div>
+        <div class="box header-box">
+            <h2 id="user-content">User content</h2>
+        </div>
+        <div class="box content-box">
+            <p>We do not own any data, information or material (collectively, “Content”) that you submit in the Mobile Application in the course of using the Service. You shall have sole responsibility for the accuracy, quality, integrity, legality, reliability, appropriateness, and intellectual property ownership or right to use of all submitted Content. We may, but have no obligation to, monitor and review the Content in the Mobile Application submitted or created using our Services by you. You grant us permission to access, copy, distribute, store, transmit, reformat, display and perform the Content of your user account solely as required for the purpose of providing the Services to you. Without limiting any of those representations or warranties, we have the right, though not the obligation, to, in our own sole discretion, refuse or remove any Content that, in our reasonable opinion, violates any of our policies or is in any way harmful or objectionable. You also grant us the license to use, reproduce, adapt, modify, publish or distribute the Content created by you or stored in your user account for commercial, marketing or any similar purpose.</p>
+        </div>
+        <div class="box header-box">
+            <h2 id="backups">Backups</h2>
+        </div>
+        <div class="box content-box">
+            <p>We are not responsible for the Content residing in the Mobile Application. In no event shall we be held liable for any loss of any Content. It is your sole responsibility to maintain appropriate backup of your Content. Notwithstanding the foregoing, on some occasions and in certain circumstances, with absolutely no obligation, we may be able to restore some or all of your data that has been deleted as of a certain date and time when we may have backed up data for our own purposes. We make no guarantee that the data you need will be available.</p>
+        </div>
+        <div class="box header-box">
+            <h2 id="links-to-other-resources">Links to other resources</h2>
+        </div>
+        <div class="box content-box">
+            <p>Although the Mobile Application and Services may link to other resources (such as websites, mobile applications, etc.), we are not, directly or indirectly, implying any approval, association, sponsorship, endorsement, or affiliation with any linked resource, unless specifically stated herein. We are not responsible for examining or evaluating, and we do not warrant the offerings of, any businesses or individuals or the content of their resources. We do not assume any responsibility or liability for the actions, products, services, and content of any other third parties. You should carefully review the legal statements and other conditions of use of any resource which you access through a link in the Mobile Application. Your linking to any other off-site resources is at your own risk.</p>
+        </div>
+        <div class="box header-box">
+            <h2 id="prohibited-uses">Prohibited uses</h2>
+        </div>
+        <div class="box content-box">
+            <p>In addition to other terms as set forth in the Agreement, you are prohibited from using the Mobile Application and Services or Content: (a) for any unlawful purpose; (b) to solicit others to perform or participate in any unlawful acts; (c) to violate any international, federal, provincial or state regulations, rules, laws, or local ordinances; (d) to infringe upon or violate our intellectual property rights or the intellectual property rights of others; (e) to harass, abuse, insult, harm, defame, slander, disparage, intimidate, or discriminate based on gender, sexual orientation, religion, ethnicity, race, age, national origin, or disability; (f) to submit false or misleading information; (g) to upload or transmit viruses or any other type of malicious code that will or may be used in any way that will affect the functionality or operation of the Mobile Application and Services, third party products and services, or the Internet; (h) to spam, phish, pharm, pretext, spider, crawl, or scrape; (i) for any obscene or immoral purpose; or (j) to interfere with or circumvent the security features of the Mobile Application and Services, third party products and services, or the Internet. We reserve the right to terminate your use of the Mobile Application and Services for violating any of the prohibited uses.</p>
+        </div>
+        <div class="box header-box">
+            <h2 id="intellectual-property-rights">Intellectual property rights</h2>
+        </div>
+        <div class="box content-box">
+            <p>“Intellectual Property Rights” means all present and future rights conferred by statute, common law or equity in or in relation to any copyright and related rights, trademarks, designs, patents, inventions, goodwill and the right to sue for passing off, rights to inventions, rights to use, and all other intellectual property rights, in each case whether registered or unregistered and including all applications and rights to apply for and be granted, rights to claim priority from, such rights and all similar or equivalent rights or forms of protection and any other results of intellectual activity which subsist or will subsist now or in the future in any part of the world. This Agreement does not transfer to you any intellectual property owned by the Operator or third parties, and all rights, titles, and interests in and to such property will remain (as between the parties) solely with the Operator. All trademarks, service marks, graphics and logos used in connection with the Mobile Application and Services, are trademarks or registered trademarks of the Operator or its licensors. Other trademarks, service marks, graphics and logos used in connection with the Mobile Application and Services may be the trademarks of other third parties. Your use of the Mobile Application and Services grants you no right or license to reproduce or otherwise use any of the Operator or third party trademarks.</p>
+        </div>
+        <div class="box header-box">
+            <h2 id="subscriptions">Subscriptions</h2>
+        </div>
+        <div class="box content-box">
+            <p>The Mobile Application and Services may be made available on a subscription basis. If you choose to purchase a subscription, you agree to pay the subscription fees and any applicable taxes.</p>
+        </div>
+        <div class="box header-box">
+            <h2 id="indemnification">Indemnification</h2>
+        </div>
+        <div class="box content-box">
+            <p>You agree to indemnify and hold the Operator and its affiliates, directors, officers, employees, agents, suppliers and licensors harmless from and against any liabilities, losses, damages or costs, including reasonable attorneys’ fees, incurred in connection with or arising from any third-party allegations, claims, actions, disputes, or demands asserted against any of them as a result of or relating to your Content, your use of the Mobile Application and Services or any willful misconduct on your part.</p>
+        </div>
+        <div class="box header-box">
+            <h2 id="severability">Severability</h2>
+        </div>
+        <div class="box content-box">
+            <p>All rights and restrictions contained in this Agreement may be exercised and shall be applicable and binding only to the extent that they do not violate any applicable laws and are intended to be limited to the extent necessary so that they will not render this Agreement illegal, invalid or unenforceable. If any provision or portion of any provision of this Agreement shall be held to be illegal, invalid or unenforceable by a court of competent jurisdiction, it is the intention of the parties that the remaining provisions or portions thereof shall constitute their agreement with respect to the subject matter hereof, and all such remaining provisions or portions thereof shall remain in full force and effect.</p>
+        </div>
+        <div class="box header-box">
+            <h2 id="dispute-resolution">Dispute resolution</h2>
+        </div>
+        <div class="box content-box">
+            <p>The formation, interpretation, and performance of this Agreement and any disputes arising out of it shall be governed by the substantive and procedural laws of British Columbia, Canada without regard to its rules on conflicts or choice of law and, to the extent applicable, the laws of Canada. The exclusive jurisdiction and venue for actions related to the subject matter hereof shall be the courts located in British Columbia, Canada, and you hereby submit to the personal jurisdiction of such courts. You hereby waive any right to a jury trial in any proceeding arising out of or related to this Agreement. The United Nations Convention on Contracts for the International Sale of Goods does not apply to this Agreement.</p>
+        </div>
+        <div class="box header-box">
+            <h2 id="changes-and-amendments">Changes and amendments</h2>
+        </div>
+        <div class="box content-box">
+            <p>We reserve the right to modify this Agreement or its terms related to the Mobile Application and Services at any time, effective upon posting of an updated version of this Agreement in the Mobile Application. When we do, we will revise the updated date at the bottom of this page. Continued use of the Mobile Application and Services after any such changes shall constitute your consent to such changes.</p>
+        </div>
+        <div class="box header-box">
+            <h2 id="acceptance-of-these-terms">Acceptance of these terms</h2>
+        </div>
+        <div class="box content-box">
+            <p>You acknowledge that you have read this Agreement and agree to all its terms and conditions. By accessing and using the Mobile Application and Services you agree to be bound by this Agreement. If you do not agree to abide by the terms of this Agreement, you are not authorized to access or use the Mobile Application and Services.</p>
+        </div>
+        <div class="box header-box">
+            <h2 id="contacting-us">Contacting us</h2>
+        </div>
+        <div class="box content-box">
+            <p>If you have any questions about this Agreement, please contact us.</p>
+            <ul>
+                <li>By email: help.stride.app@gmail.com</li>
+            </ul>
+        </div>
+        <div class="box trans-content-box">
+            <p><strong>Last updated: May 25, 2024</strong></p>
+        </div>
+    </div>
+    <script>
+        const circleContainer = document.getElementById('circle-container');
+        const numCircles = 50; // Total number of circles to create
+        const circles = [];
+        const maxHeight = document.documentElement.scrollHeight; // Get the total scrollable height of the document
 
-        <h2 id="accounts-and-membership">Accounts and membership</h2>
-        <p>If you create an account in the Mobile Application, you are responsible for maintaining the security of your account and you are fully responsible for all activities that occur under the account and any other actions taken in connection with it. We may monitor and review new accounts before you may sign in and start using the Services. Providing false contact information of any kind may result in the termination of your account. You must immediately notify us of any unauthorized uses of your account or any other breaches of security. We will not be liable for any acts or omissions by you, including any damages of any kind incurred as a result of such acts or omissions. We may suspend, disable, or delete your account (or any part thereof) if we determine that you have violated any provision of this Agreement or that your conduct or content would tend to damage our reputation and goodwill. If we delete your account for the foregoing reasons, you may not re-register for our Services. We may block your email address and Internet protocol address to prevent further registration.</p>
+        const createCircle = (diameter, top, left, duration) => {
+            const circle = document.createElement('div');
+            circle.classList.add('circle');
+            circle.style.width = `${diameter}px`;
+            circle.style.height = `${diameter}px`;
+            circle.style.top = `${top}px`; // Position relative to the document
+            circle.style.left = `${left}%`;
+            circle.style.animationDuration = `${duration}s`;
+            circleContainer.appendChild(circle);
+            return circle;
+        };
 
-        <h2 id="user-content">User content</h2>
-        <p>We do not own any data, information or material (collectively, “Content”) that you submit in the Mobile Application in the course of using the Service. You shall have sole responsibility for the accuracy, quality, integrity, legality, reliability, appropriateness, and intellectual property ownership or right to use of all submitted Content. We may, but have no obligation to, monitor and review the Content in the Mobile Application submitted or created using our Services by you. You grant us permission to access, copy, distribute, store, transmit, reformat, display and perform the Content of your user account solely as required for the purpose of providing the Services to you. Without limiting any of those representations or warranties, we have the right, though not the obligation, to, in our own sole discretion, refuse or remove any Content that, in our reasonable opinion, violates any of our policies or is in any way harmful or objectionable. You also grant us the license to use, reproduce, adapt, modify, publish or distribute the Content created by you or stored in your user account for commercial, marketing or any similar purpose.</p>
+        // Create circles throughout the page height
+        for (let i = 0; i < numCircles; i++) {
+            const circle = createCircle(
+                Math.random() * 100 + 50, // Random diameter between 50px and 150px
+                Math.random() * maxHeight, // Random top position relative to the document height
+                Math.random() * 100, // Random left position between 0% and 100%
+                Math.random() * 20 + 10 // Random animation duration
+            );
+            circles.push(circle);
+        }
 
-        <h2 id="backups">Backups</h2>
-        <p>We are not responsible for the Content residing in the Mobile Application. In no event shall we be held liable for any loss of any Content. It is your sole responsibility to maintain appropriate backup of your Content. Notwithstanding the foregoing, on some occasions and in certain circumstances, with absolutely no obligation, we may be able to restore some or all of your data that has been deleted as of a certain date and time when we may have backed up data for our own purposes. We make no guarantee that the data you need will be available.</p>
+        let lastScrollTop = 0;
+        const topBar = document.getElementById('top-bar');
 
-        <h2 id="links-to-other-resources">Links to other resources</h2>
-        <p>Although the Mobile Application and Services may link to other resources (such as websites, mobile applications, etc.), we are not, directly or indirectly, implying any approval, association, sponsorship, endorsement, or affiliation with any linked resource, unless specifically stated herein. We are not responsible for examining or evaluating, and we do not warrant the offerings of, any businesses or individuals or the content of their resources. We do not assume any responsibility or liability for the actions, products, services, and content of any other third parties. You should carefully review the legal statements and other conditions of use of any resource which you access through a link in the Mobile Application. Your linking to any other off-site resources is at your own risk.</p>
+        const parallaxEffect = () => {
+            const scrollTop = window.scrollY;
+            const scrollDelta = scrollTop - lastScrollTop;
 
-        <h2 id="prohibited-uses">Prohibited uses</h2>
-        <p>In addition to other terms as set forth in the Agreement, you are prohibited from using the Mobile Application and Services or Content: (a) for any unlawful purpose; (b) to solicit others to perform or participate in any unlawful acts; (c) to violate any international, federal, provincial or state regulations, rules, laws, or local ordinances; (d) to infringe upon or violate our intellectual property rights or the intellectual property rights of others; (e) to harass, abuse, insult, harm, defame, slander, disparage, intimidate, or discriminate based on gender, sexual orientation, religion, ethnicity, race, age, national origin, or disability; (f) to submit false or misleading information; (g) to upload or transmit viruses or any other type of malicious code that will or may be used in any way that will affect the functionality or operation of the Mobile Application and Services, third party products and services, or the Internet; (h) to spam, phish, pharm, pretext, spider, crawl, or scrape; (i) for any obscene or immoral purpose; or (j) to interfere with or circumvent the security features of the Mobile Application and Services, third party products and services, or the Internet. We reserve the right to terminate your use of the Mobile Application and Services for violating any of the prohibited uses.</p>
+            // Update top bar visibility
+            if (scrollTop > lastScrollTop) {
+                // Scroll down
+                topBar.style.top = '-70px'; // Hide top bar
+            } else {
+                // Scroll up
+                topBar.style.top = '10px'; // Show top bar
+            }
+            lastScrollTop = scrollTop;
 
-        <h2 id="intellectual-property-rights">Intellectual property rights</h2>
-        <p>“Intellectual Property Rights” means all present and future rights conferred by statute, common law or equity in or in relation to any copyright and related rights, trademarks, designs, patents, inventions, goodwill and the right to sue for passing off, rights to inventions, rights to use, and all other intellectual property rights, in each case whether registered or unregistered and including all applications and rights to apply for and be granted, rights to claim priority from, such rights and all similar or equivalent rights or forms of protection and any other results of intellectual activity which subsist or will subsist now or in the future in any part of the world. This Agreement does not transfer to you any intellectual property owned by the Operator or third parties, and all rights, titles, and interests in and to such property will remain (as between the parties) solely with the Operator. All trademarks, service marks, graphics and logos used in connection with the Mobile Application and Services, are trademarks or registered trademarks of the Operator or its licensors. Other trademarks, service marks, graphics and logos used in connection with the Mobile Application and Services may be the trademarks of other third parties. Your use of the Mobile Application and Services grants you no right or license to reproduce or otherwise use any of the Operator or third party trademarks.</p>
+            // Apply parallax effect to circles
+            circles.forEach((circle, index) => {
+                const speed = 0.05 + (index % 5) * 0.02; // Varying speeds for parallax effect
+                const offset = scrollDelta * speed;
+                circle.style.transform = `translateY(${offset}px)`;
+            });
 
-        <h2 id="subscriptions">Subscriptions</h2>
-        <p>The Mobile Application and Services may be made available on a subscription basis. If you choose to purchase a subscription, you agree to pay the subscription fees and any applicable taxes.
+            requestAnimationFrame(resetCircles);
+        };
+
+        const resetCircles = () => {
+            circles.forEach((circle) => {
+                circle.style.transform = 'translateY(0)';
+            });
+        };
+
+        window.addEventListener('scroll', parallaxEffect);
+    </script>
 </body>
 </html>

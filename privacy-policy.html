@@ -15,6 +15,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            align-content: center;
             overflow-y: auto; /* Allow vertical scrolling */
         }
         .container {
@@ -26,7 +27,62 @@
             flex-direction: column;
             display: flex;
         }
+        .top-bar {
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1f3a66;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            border-radius: 15px; /* Rounded corners */
+            font-size: larger;
+            transition: top 0.3s; /* Smooth hide/show transition */
+        }
+        .top-bar .left, .top-bar .right {
+            display: flex;
+            align-items: center;
+        }
+        .top-bar .left button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 1em;
+            margin: 0 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .top-bar .left button::after {
+            content: "|";
+            color: white;
+            margin-left: 33px;
+        }
+        .top-bar .left button:last-child::after {
+            content: "";
+        }
+        .top-bar a {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 1em;
+            margin: 0 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .top-bar a:hover {
+            text-decoration: underline;
+        }
+        .top-bar .email-icon {
+            margin-right: 5px;
+            border-radius: 50%;
+        }
         .title-box {
+            padding-top: 100px;
             width: 100%; /* Full width */
             display: flex;
             align-items: center;
@@ -110,6 +166,8 @@
         ul p {
             padding-left: 0; /* Remove left padding */
             margin-left: 0;  /* Also remove left margin if needed */
+            padding-top: 3px;
+            padding-bottom: 3px;
         }
         ul{
             margin-left: 7%;
@@ -151,9 +209,20 @@
                 transform: translateY(0) rotate(0);
             }
         }
-            </style>
+
+    </style>
 </head>
 <body>
+    <div class="top-bar">
+        <div class="left">
+            <button onclick="window.location.href='index.html'">Index</button>
+            <button onclick="window.location.href='terms.html'">Terms</button>
+        </div>
+        <div class="right">
+            <img src="email-icon.png" alt="Email" class="email-icon" width="20" height="20">
+            <a href="mailto:help.stride.app@gmail.com">help.stride.app@gmail.com</a>
+        </div>
+    </div>
     <div class="circles" id="circle-container">
     </div>
     <div class="container">
@@ -369,12 +438,23 @@ for (let i = 0; i < numCircles; i++) {
 }
 
 let lastScrollTop = 0;
+const topBar = document.getElementById('top-bar');
 
 const parallaxEffect = () => {
     const scrollTop = window.scrollY;
     const scrollDelta = scrollTop - lastScrollTop;
+
+    // Update top bar visibility
+    if (scrollTop > lastScrollTop) {
+        // Scroll down
+        topBar.style.top = '-70px'; // Hide top bar
+    } else {
+        // Scroll up
+        topBar.style.top = '10px'; // Show top bar
+    }
     lastScrollTop = scrollTop;
 
+    // Apply parallax effect to circles
     circles.forEach((circle, index) => {
         const speed = 0.05 + (index % 5) * 0.02; // Varying speeds for parallax effect
         const offset = scrollDelta * speed;
