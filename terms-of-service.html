@@ -19,7 +19,7 @@
             overflow-y: auto; /* Allow vertical scrolling */
         }
         .container {
-            width: 60%; /* 6/8ths of the width */
+            width: 60%; /* 6/10ths of the width */
             margin: 20px auto;
             text-align: center; /* Center all content */
             align-items: center;
@@ -79,7 +79,6 @@
         }
         .top-bar .email-icon {
             margin-right: 5px;
-            border-radius: 50%;
         }
         .title-box {
             padding-top: 100px;
@@ -105,6 +104,17 @@
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            text-align: left; /* Left align text inside boxes */
+            box-sizing: border-box; /* Include padding in width */
+        }
+        .nav-box {
+            background-color: #2a4471; /* Content background color */
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 90%;
             text-align: left; /* Left align text inside boxes */
             box-sizing: border-box; /* Include padding in width */
         }
@@ -124,7 +134,7 @@
             text-align: center; /* Center headers */
         }
         h1 {
-            font-size: 4em; /* Largest font size */
+            font-size: 3em; /* Largest font size */
             color: rgb(213, 240, 253); /* Contrast color for headings */
         }
         h2 {
@@ -173,8 +183,9 @@
             margin-left: 7%;
         }
         a {
-            color: rgb(122, 168, 255); /*contrasting color for links */
+            color: #b3b3ffdc; /*contrasting color for links */
             text-decoration: none;
+            font-weight: bolder;
         }
         a:hover {
             text-decoration: underline;
@@ -198,6 +209,9 @@
             animation: move 20s infinite ease-in-out;
             transition: transform 0.5s ease-out;
         }
+        ol{
+            width: 100%;
+        }
         @keyframes move {
             0% {
                 transform: translateY(0) rotate(0);
@@ -219,8 +233,8 @@
             <button onclick="window.location.href='privacy-policy.html'">Privacy</button>
         </div>
         <div class="right">
-            <img src="gmail-icon.png" alt="Email" class="email-icon" width="40" height="40">
-            <a href="mailto:help.stride.app@gmail.com">Help.Stride.App@gmail.com</a>
+            <img src="gmail-icon.png" alt="Email" class="email-icon" width="30" height="30">
+            <a href="mailto:help.stride.app@gmail.com">Help.Stride.app@gmail.com</a>
         </div>
     </div>
     <div class="circles" id="circle-container"></div>
@@ -235,7 +249,7 @@
         <div class="box header-box">
             <h2>Table of contents</h2>
         </div>
-        <div class="box content-box">
+        <div class="box nav-box">
             <ol>
                 <li><a href="#accounts-and-membership">Accounts and membership</a></li>
                 <li><a href="#user-content">User content</a></li>
